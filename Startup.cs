@@ -28,12 +28,11 @@ namespace toDoList_backEnd
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSignalR();
             services.AddTransient<IRepository<ToDoItem>, ToDoItemRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "project_back_end_foureach", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "toDoList_backEnd", Version = "v1" });
             });
 
             services.AddCors(options =>
@@ -42,7 +41,7 @@ namespace toDoList_backEnd
                 {
                     policy.AllowAnyHeader()
                  .AllowAnyMethod()
-                 .WithOrigins("http://localhost:3000", "https://foureach-mue.netlify.app")
+                 .WithOrigins("http://localhost:3000")
                  .AllowCredentials();
                 });
             });
@@ -55,7 +54,7 @@ namespace toDoList_backEnd
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "project_back_end_foureach v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "toDoList_backEnd v1"));
             }
 
             app.UseHttpsRedirection();
