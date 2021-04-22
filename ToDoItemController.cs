@@ -27,7 +27,7 @@ public class ToDoItemController : ControllerBase
     {
         try
         {
-            var result = await _postRepository.Get(id);
+            var result = await _toDoItemRepository.Get(id);
             return Ok(result);
         }
         catch (Exception)
@@ -43,7 +43,7 @@ public class ToDoItemController : ControllerBase
     {
         try
         {
-            await _postRepository.Delete(id);
+            await _toDoItemRepository.Delete(id);
             return Ok();
         }
         catch (Exception)
@@ -55,12 +55,12 @@ public class ToDoItemController : ControllerBase
 
 
     [HttpPost]
-    public async Task<IActionResult> Insert([FromBody] Post post)
+    public async Task<IActionResult> Insert([FromBody] ToDoItem toDoItem)
     {
         try
         {
-            var newPost = await _postRepository.Insert(post);
-            return Created($"/Posts/{post.Id}", newPost);
+            var newToDoItem = await _toDoItemRepository.Insert(toDoItem);
+            return Created($"/Posts/{toDoItem.Id}", newToDoItem);
         }
         catch (Exception)
         {
