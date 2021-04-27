@@ -19,7 +19,7 @@ public class BaseRepository
             Host = _configuration["PGHOST"],
             Database = _configuration["PGDATABASE"],
             Username = _configuration["PGUSER"],
-            Port = 5432, //Int32.Parse(_configuration["PGPORT"]),
+            Port = Int32.Parse(_configuration["PGPORT"]),
             Password = _configuration["PGPASSWORD"],
             SslMode = SslMode.Require, // heroku specific setting https://stackoverflow.com/questions/37276821/connecting-to-heroku-postgres-database-with-asp-net
             TrustServerCertificate = true // heroku specific setting 
@@ -36,3 +36,7 @@ public class BaseRepository
     }
 
 }
+//"ec2-54-216-185-51.eu-west-1.compute.amazonaws.com", /
+//"d67pp0h6ktg7dc",  //
+//"exjncqfqmpkepb",  //
+//"c7c27d15ad2d423b32f03b4b981955f139ac7a70c2a5b76f3404cb0d56c2b289",  //

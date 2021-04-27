@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 
 [ApiController]
-[Route("ToDoList")]
+[Route("todolist")]
 public class ToDoItemController : ControllerBase
 {
     private readonly IRepository<ToDoItem> _toDoItemRepository;

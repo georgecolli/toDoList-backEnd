@@ -3,7 +3,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>toDoList_backEnd</RootNamespace>
     <UserSecretsId>ddef18b1-c1ec-400a-8915-ece1113be1da</UserSecretsId>
   </PropertyGroup>
 
